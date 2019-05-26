@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+  <Type>
+    <Name>PSMemory.Reference</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>RegionEnd</Name>
+        <GetScriptBlock>
+            $this.RegionStart + $this.RegionSize
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+</Types>
