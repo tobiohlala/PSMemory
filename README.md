@@ -17,7 +17,9 @@ ___
 
 ### Cmdlets
 
-`Search-Memory` searches the virtual address space of a process for specific values returning references to the memory they reside in.
+#### `Search-Memory`
+
+searches the virtual address space of a process for specific values returning references to the memory they reside in.
 Besides the value itself these references contain other related information such as the concrete memory address or the protection of
 the page the value was found in. A search can be specified by the `-Values` parameter in the form of a hashtable where the *keys* define
 data types and the corresponding *values* define the values of that data type to be searched for as a comma-separated list. Valid data
