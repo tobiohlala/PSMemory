@@ -40,10 +40,18 @@ Get-Process foo | Search-Memory -Values @{
 ```
 
 
-`Compare-Memory` compares such references' values as present in memory when the reference was created or last updated to the current
-in-memory value.  
-`Update-Memory` updates the current in-memory value referenced by a reference.  
-`Format-Memory` formats reference objects as returned by the aforementioned Cmdlets into readable output.  
+#### `Compare-Memory`
+
+compares such references' values as present in memory when the reference was created or last updated to the current
+in-memory value.
+
+#### `Update-Memory`
+
+updates the current in-memory value referenced by a reference.  
+
+#### `Format-Memory`
+
+formats reference objects as returned by the aforementioned Cmdlets into readable output.  
 
 ## Installation
 
