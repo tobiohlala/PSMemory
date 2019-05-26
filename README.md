@@ -10,16 +10,27 @@ ___
 
 **PSMemory** is a 64 bit windows memory scanner written in PowerShell hence fully automation capable.
 
+___
 
 
-## Cmdlets
+## Description
 
--  `Search-Memory`
-searches the virtual address space of a process for specific values returning references to the memory they reside in.
--  `Compare-Memory`
-compares such references' values as present in memory when the reference was created or last updated to the current
-in-memory value.
--  `Update-Memory`
-updates the current in-memory value referenced by a reference.
--  `Format-Memory`
-formats reference objects as returned by the aforementioned Cmdlets into readable output.
+### Cmdlets
+
+`Search-Memory` searches the virtual address space of a process for specific values returning references to the memory they reside in.  
+`Compare-Memory` compares such references' values as present in memory when the reference was created or last updated to the current
+in-memory value.  
+`Update-Memory` updates the current in-memory value referenced by a reference.  
+`Format-Memory` formats reference objects as returned by the aforementioned Cmdlets into readable output.  
+
+## Installation
+
+Install from [PowerShell Gallery](https://www.powershellgallery.com/packages/PSMemory)
+
+```Powershell
+Install-Module -Name PSMemory
+```
+or
+```Shell
+git clone https://github.com/off-world/PSMemory
+```
