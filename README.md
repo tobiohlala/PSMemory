@@ -12,7 +12,6 @@ ___
 
 ___
 
-
 ## Description
 
 ### Cmdlets
@@ -24,12 +23,12 @@ Besides the value itself these references contain other related information such
 the page the value was found in. A search can be specified by the `-Values` parameter in the form of a hashtable where the *keys* define
 data types and the corresponding *values* define the values of that data type to be searched for as a comma-separated list. Valid data
 types to be specified as *keys* for the search table are
--  **Byte** for 8 bit numerical values
--  **Short** for 16 bit numerical values
--  **Int** for 32 bit numerical values
--  **Long** for 64 bit numerical values
--  **String** for ASCII text of arbitrary length
--  **Bytes** for Unicode byte arrays of arbitrary length
+-   **Byte** for 8 bit numerical values
+-   **Short** for 16 bit numerical values
+-   **Int** for 32 bit numerical values
+-   **Long** for 64 bit numerical values
+-   **String** for ASCII text of arbitrary length
+-   **Bytes** for Unicode byte arrays of arbitrary length
 
 **Example**: a search for two 32 bit numerical values *1234* and *5678* as well as the text *foo* within the memory of the process *foo* may look like
 ```Powershell
@@ -38,7 +37,6 @@ Get-Process foo | Search-Memory -Values @{
     String = 'foo'
 }
 ```
-
 
 #### `Compare-Memory`
 
