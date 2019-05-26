@@ -30,18 +30,24 @@ types to be specified as *keys* for the search table are
 -   **String** for ASCII text of arbitrary length
 -   **Bytes** for Unicode byte arrays of arbitrary length
 
-**Example**: a search for two 32 bit numerical values *1234* and *5678* as well as the text *foo* within the memory of the process *foo* may look like
+**Example**: a search for two 32 bit numerical values *1234* and *5678* as well as the text *Notepad* within the memory of the process *notepad* saving the result in a variable *notepad* for further processing may look like
 ```Powershell
-Get-Process foo | Search-Memory -Values @{
+Get-Process notepad | Search-Memory -Values @{
     Int = 1234, 5678
-    String = 'foo'
-}
+    String = 'Notepad'
+} -OutVariable notepad
 ```
 
 #### `Compare-Memory`
 
-compares such references' values as present in memory when the reference was created or last updated to the current
-in-memory value.
+compares those references' values as present in memory when the reference was created or last updated to the current
+in-memory value. With the `-Changed` and `-Unchanged` parameters each reference will be matched whose in-memory value has either
+changed in any way or stood the same. For numerical values exclusively there are additionally the `-Increased` and `-Decreased` parameters which track if the in-memory value did either become greater or lower. For everything else there is the `-Filter` parameter where a PowerShell ScriptBlock may be supplied with a custom comparison criteria.
+
+**Example**: given the above search now filter out those references whose in-memory value is either exactly *42* or has increased
+```Powershell
+$notepad | Compare-Memory -Increased -Filter {$_.Value -eq 42}
+```
 
 #### `Update-Memory`
 
