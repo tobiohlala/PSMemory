@@ -232,7 +232,7 @@ function Search-Memory {
     $progressTimer = [System.Diagnostics.Stopwatch]::StartNew()
 
     $searchResult = `
-	for ($baseAddress = $minAddress; $baseAddress -lt $maxAddress; $baseAddress += $memoryRegionSize) {
+    for ($baseAddress = $minAddress; $baseAddress -lt $maxAddress; $baseAddress += $memoryRegionSize) {
         if ([PSMemory.Native]::VirtualQueryEx(
 		$processHandle,
 		$baseAddress,
