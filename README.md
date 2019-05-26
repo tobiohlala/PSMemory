@@ -44,9 +44,9 @@ compares those references' values as present in memory when the reference was cr
 in-memory value. With the `-Changed` and `-Unchanged` parameters each reference will be matched whose in-memory value has either
 changed in any way or stood the same. For numerical values exclusively there are additionally the `-Increased` and `-Decreased` parameters which track if the in-memory value did either become greater or lower. For everything else there is the `-Filter` parameter where a PowerShell ScriptBlock may be supplied with a custom comparison criteria.
 
-**Example**: given the above search now filter out those references whose in-memory value is either exactly *42* or has increased
+**Example**: given the above search now filter out those references whose in-memory value is either exactly *42* or has increased and update the reference result variable
 ```Powershell
-$notepad | Compare-Memory -Increased -Filter {$_.Value -eq 42}
+$notepad | Compare-Memory -Increased -Filter {$_.Value -eq 42} -OutVariable notepad
 ```
 
 #### `Update-Memory`
