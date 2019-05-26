@@ -42,17 +42,17 @@ try {
             public class Native {
                 [StructLayout(LayoutKind.Sequential)]
                 public struct SYSTEM_INFO {
-                public ushort wProcessorArchitecture;
-                public ushort wReserved;
-                public uint dwPageSize;
-                public IntPtr lpMinimumApplicationAddress;
-                public IntPtr lpMaximumApplicationAddress;
-                public UIntPtr dwActiveProcessorMask;
-                public uint dwNumberOfProcessors;
-                public uint dwProcessorType;
-                public uint dwAllocationGranularity;
-                public ushort wProcessorLevel;
-                public ushort wProcessorRevision;
+					public ushort wProcessorArchitecture;
+					public ushort wReserved;
+					public uint dwPageSize;
+					public IntPtr lpMinimumApplicationAddress;
+					public IntPtr lpMaximumApplicationAddress;
+					public UIntPtr dwActiveProcessorMask;
+					public uint dwNumberOfProcessors;
+					public uint dwProcessorType;
+					public uint dwAllocationGranularity;
+					public ushort wProcessorLevel;
+					public ushort wProcessorRevision;
                 };
 
                 [StructLayout(LayoutKind.Sequential)] 
@@ -135,10 +135,10 @@ function Format-Memory {
     param(
         [Parameter(Mandatory, ValueFromPipeline, Position=0)]
         [Microsoft.PowerShell.Commands.GroupInfo]
-        $Memory
+        $Reference
     )
 
-    $Memory | Select-Object -ExpandProperty Group
+    $Reference | Select-Object -ExpandProperty Group
 
     <#
         .SYNOPSIS
@@ -147,7 +147,7 @@ function Format-Memory {
         .DESCRIPTION
         Turn a memory reference group object into readable format.
 
-        .PARAMETER Memory
+        .PARAMETER Reference
         A memory reference Microsoft.PowerShell.Commands.GroupInfo object as returned
         by the *-Memory Cmdlets in this module.
 
@@ -234,10 +234,10 @@ function Search-Memory {
     $searchResult = `
 	for ($baseAddress = $minAddress; $baseAddress -lt $maxAddress; $baseAddress += $memoryRegionSize) {
         if ([PSMemory.Native]::VirtualQueryEx(
-                $processHandle,
+				$processHandle,
 				$baseAddress,
 				[ref]$memoryInfo,
-                $memoryInfoSize) -eq 0
+				$memoryInfoSize) -eq 0
         ) {
             $e = [Runtime.InteropServices.Marshal]::GetLastWin32Error()
             throw New-Win32Exception $e -From VirtualQueryEx
@@ -264,11 +264,11 @@ function Search-Memory {
         ) {
             $buffer = [byte[]]::New($memoryRegionSize)
             if ([PSMemory.Native]::ReadProcessMemory(
-                    $processHandle,
-                    $baseAddress,
-                    $buffer,
-                    $memoryRegionSize,
-                    [ref][IntPtr]::Zero) -eq 0
+					$processHandle,
+					$baseAddress,
+					$buffer,
+					$memoryRegionSize,
+					[ref][IntPtr]::Zero) -eq 0
             ) {
                 $e = [Runtime.InteropServices.Marshal]::GetLastWin32Error()
                 throw New-Win32Exception $e -From ReadProcessMemory
