@@ -3,6 +3,7 @@
 </p>
 
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/v/PSMemory.svg)](https://www.powershellgallery.com/packages/PSMemory)
+![powershell version](https://img.shields.io/badge/powershell-v5-blue.svg)
 ![supported windows versions](https://img.shields.io/badge/supported%20windows%20versions-7%2F8%2F10-yellow.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7f35ae966821403c9952a277d3e5d19a)](https://www.codacy.com/app/off-world/PSMemory?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=off-world/PSMemory&amp;utm_campaign=Badge_Grade)
 
