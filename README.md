@@ -51,11 +51,20 @@ $notepad | Compare-Memory -Increased -Filter {$_.Value -eq 42} -OutVariable note
 
 #### `Update-Memory`
 
-updates the current in-memory value referenced by a reference.  
+updates the current in-memory value referenced by a reference. The new value to be written may be supplied by one of the data type parameters depending on what value of what size to write.
 
+**Example:** after filtering the memory references above now update each remaining referenced in-memory value with a new 32 bit numerical value of *9876*
+```Powershell
+$notepad | Update-Memory -Int 9876
+```
 #### `Format-Memory`
 
-formats reference objects as returned by the aforementioned Cmdlets into readable output.  
+formats reference objects as returned by the aforementioned Cmdlets into readable output.
+
+**Example:**
+```Powershell
+$notepad | Compare-Memory -Increased -Filter {$_.Value -eq 42} | Format-Memory
+```
 
 ## Installation
 
