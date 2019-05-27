@@ -56,7 +56,7 @@ try {
                 };
 
                 [StructLayout(LayoutKind.Sequential)] 
-                public struct PSMemoryORY_BASIC_INFORMATION64 { 
+                public struct MEMORY_BASIC_INFORMATION64 { 
                     public ulong BaseAddress; 
                     public ulong AllocationBase; 
                     public int AllocationProtect; 
