@@ -6,7 +6,6 @@
     Copyright           = '3-Clause BSD Copyright 2019 Tobias Heilig'
     Description         = 'Windows 64 Bit Memory Scanner'
     FunctionsToExport   = @('Format-Memory','Search-Memory','Compare-Memory','Update-Memory')
-    AliasesToExport     = '*'
     FormatsToProcess    = @('PSMemory.Format.ps1xml')
     TypesToProcess      = @('PSMemory.Types.ps1xml')
 }
