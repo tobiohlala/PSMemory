@@ -60,12 +60,17 @@ $notepad | Update-Memory -Int 9876
 ```
 #### `Format-Memory`
 
-formats reference objects as returned by the aforementioned Cmdlets into readable output.
+formats reference objects as returned by **all** the aforementioned Cmdlets into formatted and human readable output.
 
 **Example:**
 ```Powershell
+Get-Process notepad | Search-Memory -Values @{Int = 42} -OutVariable notepad | Format-Memory
+```
+or
+```Powershell
 $notepad | Compare-Memory -Increased -Filter {$_.Value -eq 42} | Format-Memory
 ```
+Alternatively, you can use the alias `fm`.
 
 ## Installation
 
