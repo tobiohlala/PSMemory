@@ -81,5 +81,5 @@ Install-Module -Name PSMemory
 ```
 or
 ```Shell
-git clone https://github.com/off-world/PSMemory
+git clone https://github.com/tobiohlala/PSMemory
 ```
